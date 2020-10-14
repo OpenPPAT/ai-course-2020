@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<launch>
+  
+  <node pkg="ssd_mobile_lite" type="bb_ssd_mobile_lite.py" name="bb_ssd_mobile_lite" output="screen">
+  </node>
+
+  <node pkg="tracking" type="tracking.py" name="tracking" output="screen">
+  </node>
+
+</launch>

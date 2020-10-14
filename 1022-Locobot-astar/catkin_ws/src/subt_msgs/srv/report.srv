@@ -1,0 +1,5 @@
+#Request data
+ArtifactPose artifact
+---
+#Response data
+string result

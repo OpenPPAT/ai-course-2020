@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<launch>
+
+    <node pkg="ssd_mobile_lite" type="bb_ssd_mobile_lite.py" name="bb_ssd_mobile_lite" output="screen"></node>
+
+    <node pkg="ssd_mobile_lite" type="pub_arti_pose_ssd" name="pub_arti_pose"></node>
+
+    <node pkg="astar" type="pc2grid" name="pc2grid" output="screen"></node>
+
+    <node pkg="astar" type="path_plan" name="plan" output="screen">
+        <remap from="map" to="depthcam_map" />
+    </node>
+
+    <node pkg="astar" type="tracking.py" name="track" output="screen" />
+
+    <node pkg="control" type="pid_control.py" name="control" output="screen">
+        <remap from="cmd_vel" to="track_vel" />
+        <remap from="pose" to="/odom" />
+    </node>
+
+</launch>

@@ -1,0 +1,6 @@
+#Request data
+---
+#Response data
+bool status		# True for normal, False for danger
+float32 height
+# string result # for mission result
